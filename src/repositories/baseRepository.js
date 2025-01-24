@@ -39,6 +39,7 @@ class BaseRepository {
             totalCount,
         };
     }
+
     async findById(id, populateFields = []) {
         this._validateObjectId(id);
 

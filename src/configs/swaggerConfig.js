@@ -11,6 +11,10 @@ const options = {
         },
         servers: [
             {
+                url: 'https://menu-management-api-wzm0.onrender.com',
+                description: 'Deployed server',
+            },
+            {
                 url: 'http://localhost:3000',
                 description: 'Local server',
             },

@@ -99,3 +99,9 @@ The application uses the **Model-View-Controller (MVC)** pattern for separation 
 The Swagger documentation is automatically available when you start the server. You can access it at: `http://localhost:3000/api-docs`
 
 Each endpoint adheres to RESTful principles and returns proper status codes and error messages for efficient debugging and usage.
+
+---
+
+## Deployed Link
+
+The backend is deployed on Render and can be accessed at: [Menu Management Backend](https://menu-management-api-wzm0.onrender.com/api-docs)

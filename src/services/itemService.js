@@ -9,6 +9,11 @@ const createItem = async (data) => {
         throw { status: 400, message: 'Category ID, Item name, and Base amount are required' };
     }
 
+    const existingItem = await itemRepository.findOne({ name });
+    if (existingItem) {
+        throw { status: 400, message: 'Item already exists' };
+    }
+
     const category = await categoryRepository.findById(categoryId);
     if (!category) {
         throw { status: 404, message: 'Category not found' };

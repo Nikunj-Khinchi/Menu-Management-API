@@ -11,6 +11,11 @@ const createCategory = async (data) => {
         throw { status: 400, message: 'Tax and tax type are required if tax is applicable' };
     }
 
+    const existingCategory = await categoryRepository.findOne({ name });
+    if (existingCategory) {
+        throw { status: 400, message: 'Category already exists' };
+    }
+
     const category = await categoryRepository.create(data);
     return category;
 };

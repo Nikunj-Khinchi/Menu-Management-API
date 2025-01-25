@@ -8,6 +8,11 @@ const createSubCategory = async (data) => {
         throw { status: 400, message: 'Category ID and SubCategory name are required' };
     }
 
+    const existingSubCategory = await subCategoryRepository.findOne({ name });
+    if (existingSubCategory) {
+        throw { status: 400, message: 'SubCategory already exists' };
+    }
+
     const category = await categoryRepository.findById(categoryId);
     if (!category) {
         throw { status: 404, message: 'Category not found' };
